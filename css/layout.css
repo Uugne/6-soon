@@ -4,3 +4,59 @@ body {
     display: grid;
     grid-template-columns: 1fr;
 }
+
+.hero {
+    display: grid;
+    grid-template-columns: 15px 1fr 15px;
+    grid-template-areas: '. hero .' ;
+    padding: 40px 0;
+}
+
+.hero > .hero-content{
+    background-color: bisque;
+    grid-area: hero;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 15px 1fr 15px;
+    grid-template-areas: '. main .' ;
+    padding: 40px 0;
+}
+
+main > .main-content {
+    grid-area: main;
+}
+
+main > .main-content > .left-column {
+    background-color: bisque;
+}
+
+main > .main-content > .right-column {
+    background-color: bisque;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 15px 1fr 15px;
+    grid-template-areas: 
+    '. socials .'
+    '. texts .';
+    padding: 40px 0;
+}
+
+footer > .socials-content {
+    grid-area: socials;
+    background-color: bisque;
+}
+
+footer > .bottom-texts {
+    grid-area: texts;
+    background-color: bisque;
+}
+
+@media (min-width: 500px) {
+    main {
+        background-color: pink;
+    }
+}
