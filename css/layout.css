@@ -1,0 +1,6 @@
+/* minimalus ekranas i kuri taikysim mazdaug 320px, placiausias 1600-1400px */
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+}
