@@ -35,6 +35,7 @@ body {
     font-size: 75px;
     line-height: 80px;
     text-transform: uppercase;
+    word-break: break-word;
 }
 
 .hero .main-description {
