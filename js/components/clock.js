@@ -1,16 +1,29 @@
 function calcTimeTillDate(date) {
-    const targetDate = '2022-' + date;
+    const clock = new Date();
+    let year = clock.getFullYear();
+
+    let yearTarget = `${year}-${date}`;                         //gaunam 2021-03-15 14:30:00
+    let yearDateObject = new Date(yearTarget);                  //gaunam datos objekta
+    let currMiliseconds = yearDateObject.getTime();             //suzinom kiek milisekundziu praejo nuo 1970
+
+    const nowInMiliseconds = Date.now();                        //susizinom kiek dabar milisekundziu
    
-   
-   
-   
-   
-    return {
-        days: 45,
-        hours: 17,
-        minutes: 35,
-        seconds: 9
-    }
+    if (currMiliseconds < nowInMiliseconds) {
+        year++;
+        yearTarget = `${year}-${date}`;
+        yearDateObject = new Date(yearTarget);
+        currMiliseconds = yearDateObject.getTime();
+    } 
+
+    const timeLeftInMiliseconds = currMiliseconds - nowInMiliseconds;
+    const timeLeftInSeconds = Math.round(timeLeftInMiliseconds / 1000);
+
+    const seconds = timeLeftInSeconds % 60;
+    const minutes = (timeLeftInSeconds - seconds) / 60 % 60;
+    const hours = (timeLeftInSeconds - seconds - minutes * 60) / 3600 % 24;
+    const days = (timeLeftInSeconds - seconds - minutes * 60 - hours * 3600) / 86400;
+
+    return {days, hours, minutes, seconds}
 }
 
 function formatNumber(number) {
