@@ -127,6 +127,8 @@ footer > .socials-content > .icon {
     font-size: 20px;
     border-radius: 50%;
     color: white;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 footer > .socials-content > .icon:hover {
